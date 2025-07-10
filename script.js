@@ -13,7 +13,7 @@ async function checkWeather() {
 
 
     const apikey = "25a2b23b70d48cb6f19b858c15a6f360";
-    const apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
 
     const response = await fetch(apiURL);
     const data = await response.json();
@@ -28,23 +28,6 @@ async function checkWeather() {
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-
-        // if (data.weather[0].main == "Clouds") {
-        //     weathericon.src = "Images/images/clouds.png";
-        // }
-        // else if (data.weather[0].main == "Clear") {
-        //     weathericon.src = "Images/images/clear.png";
-        // }
-        // else if (data.weather[0].main == "Rain") {
-        //     weathericon.src = "Images/images/rain.png";
-        // }
-        // else if (data.weather[0].main == "Drizzle") {
-        //     weathericon.src = "Images/images/drizzle.png";
-        // }
-        // else if (data.weather[0].main == "Mist") {
-        //     weathericon.src = "Images/images/mist.png";
-        // }
 
         
 
